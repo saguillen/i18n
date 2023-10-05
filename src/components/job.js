@@ -1,5 +1,5 @@
 import React from "react";
-import {FormattedNumber, FormatNumberOptions, FormattedDate, FormattedMessage} from 'react-intl';
+import {FormattedNumber, FormatNumberOptions, FormattedDate, FormattedMessage, FormattedPlural} from 'react-intl';
 
 const Job = (props) => {
   
@@ -8,7 +8,7 @@ const Job = (props) => {
       <th scope="row">{props.offer.id}</th>
       <td>{props.offer.name}</td>
       <td>{props.offer.company}</td>
-      <td>{props.offer.salary} <FormattedMessage id="Million"/> </td>
+      <td> {props.offer.salary} <FormattedPlural value={props.offer.salary} one={<FormattedMessage id="Million"/>} other={<FormattedMessage id="Millions"/>}/> </td>
 
       <td>{props.offer.city}</td>
 
